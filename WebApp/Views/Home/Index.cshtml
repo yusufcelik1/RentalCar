@@ -42,7 +42,7 @@
 								</div>
 								<div class="form-group ml-2">
 									<label for="" class="label">Drop-off date</label>
-									<input type="text" class="form-control" id="book_pick_date" placeholder="Date" name="DropOffDate">
+									<input type="text" class="form-control" id="book_off_date" placeholder="Date" name="DropOfDate">
 								</div>
 							</div>
 							<div class="form-group">
@@ -86,29 +86,3 @@
 			</div>
 		</div>
 </section>
-
-<script>
-	$(function () {
-		$("#book_pick_date, #book_off_date").datepicker({
-			dateFormat: 'yy-mm-dd',
-			autoclose: true
-		});
-
-		$("#time_pick").timepicker();
-
-		$('#submit_button').click(function () {
-			var pickDate = $('#book_pick_date').val();
-			var offDate = $('#book_off_date').val();
-			var time = $('#time_pick').val();
-
-			// Alınan tarih ve zaman değerlerini birleştirerek uygun bir format elde edin
-			var pickDateTime = pickDate + ' ' + time;
-			var offDateTime = offDate + ' ' + time;
-
-			// Şimdi, pickDateTime ve offDateTime değerlerini SQL tablosuna ekleyebilirsiniz
-			// Örneğin, bir AJAX isteği gönderebilir veya bir form aracılığıyla sunucuya gönderebilirsiniz
-			console.log('Başlangıç Tarihi ve Saati:', pickDateTime);
-			console.log('Bitiş Tarihi ve Saati:', offDateTime);
-		});
-	});
-</script>

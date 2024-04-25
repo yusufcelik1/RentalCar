@@ -18,17 +18,17 @@ namespace WebApp.Extensions
         public static void ConfigureRepositoryManager(this IServiceCollection services)
         {
             services.AddScoped<IReservationRepository, ReservationRepository>();
-
+            services.AddScoped<IContactRepository, ContactRepository>();
         }
         public static void ConfigureServiceManager(this IServiceCollection services)
         { // service referanslar
 
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IReservationService, ReservationService>();
+			services.AddScoped<IContactService, ContactService>();
 
 
-
-        }
+		}
 
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {

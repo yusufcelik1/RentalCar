@@ -16,6 +16,7 @@ namespace Repository.Efcore
         {
 
         }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
